@@ -19,24 +19,50 @@ Desarrollar el progama que imprima :
 using namespace std;
 
 int main (){
-    cout << "ingresar la cantidad de equipos " << endl;
+    int pTotal = 0; 
+    int contG = 0;
+    int contE = 0;
+    int k,n;  
+    cout << "ingresar la cantidad de equipos " << endl;  // la cantidd de equipos 
     cin >> k ;
-    int v[k];
+    char r ;
 
-    for (int i = 0; i < k ; i++)
-    {
-        v(i) = 0;  // mepa que esta mal
-        
-        for (int  j = 0; j <= (k-1) ; j++)
-        {
-            cout << "ingresar el resultaod del partido ";
-            cin >>     // me quede aqui de como asignar un CHAR 
-        }
-        
 
+    for (int i = 0; i < k ; i++) {
+       
+        cout <<"ingrese el numero del equipo " << endl;  // aqui el numero de equipo puede ser 16, 20  o 1 2 3 ..
+        cin >> n ;
+
+
+        for (int j = 0 ; j < (k-1) ; j++){    
+
+            cout << "ingrese el resultado de su partido 'G' 'P' 'E' "<<endl; // si hay 4 equipos hay 3 partidos .
+            cin>>r;   // resultado del partido 
+            
+            switch (r){
+            case 'G' : 
+            contG++;
+            break;
+
+            case 'E' : 
+            contE++;
+            break;
+                
+            default:
+            break;
+            }
+        }  
+        
+        pTotal = 3*contG + contE;  // aqui retiene el puntaje de todos los partidos que jugo el equipo.
+        
+        cout << "el equipo de numero " << n << " tiene el puntaje de " << pTotal <<endl ;
+
+
+        contG = 0;   // para que reinicie a la suma del resultado de un nuevo equipo 
+        contE = 0;
 
     }
-    
+
 
 
 }
